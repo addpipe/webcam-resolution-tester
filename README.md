@@ -1,0 +1,1 @@
+Test and compare supported webcam resolutions in your browser.
