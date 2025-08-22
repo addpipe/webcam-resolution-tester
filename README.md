@@ -9,7 +9,7 @@ Key features:
 3. detects maximum fps supported by the webcam per each resolution
 4. can scan using both `ideal` (recommended) and `exact` video constraints
 5. results can be exported or copied as csv, markdown, json or xml
-6. scan results table includes camera name and browser; export file contains camera name
+6. scan results table includes camera name and browser; export filename contains camera name
 7. prints out the `getCapabilities()` information for the video track
 8. works on all secure contexts (including `file://`)
 9. relies on `video.videoWidth` and `video.videoHeight` for width and height, not on `track.getSettings()` (it matters on mobile devices where the device will respond with a portrait video when held in portrait mode)
