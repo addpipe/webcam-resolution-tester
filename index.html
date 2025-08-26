@@ -269,8 +269,9 @@
       </small>
     </p>
     <p>Test and compare supported webcam resolutions in your browser. Free, fast, and accurate webcam resolution tester.</p>
+    <button id="shareCamera">Request Camera Permissions</button>
     <div id="videoFeedSection">
-      <div class="video-with-buttons">
+      <div id="videoWithButtons" class="video-with-buttons">
         <div class="video-section-wrapper">
           <video
             id="video"
@@ -330,7 +331,6 @@
     </div>
     <br />
 
-    <button id="shareCamera">Request Camera Permissions</button>
     <div id="resultsSection">
       <p id="progress"></p>
       <table id="results">
@@ -494,6 +494,7 @@
         // For Firefox
         else if ((OffsetVersion = browserAgent.indexOf("Firefox")) != -1) {
           browserName = "Firefox";
+          browserVersion = browserAgent.substring(OffsetVersion + 8).split(" ")[0];
         }
 
         // For Safari
@@ -713,7 +714,7 @@
               tr.innerHTML = `
               <td>${browserFullVersion || "-"}</td>
               <td>${currentDevices.get(deviceIdToScan).deviceName || "-"}</td>
-              <td>${res.name}<br><button class="applyResolution" data-width="${res.width}" data-height="${res.height}">Apply</button></td>
+              <td>${res.name}<br></td>
               <td>${res.width}x${res.height}</td>
               <td>-</td>
               <td class="red">${err.name}</td>`;
@@ -956,7 +957,8 @@
 
       document.getElementById("closeWebcam").addEventListener("click", function (event) {
         currentStream && currentStream.getTracks().forEach((t) => t.stop());
-        this.style.display = "none";
+        document.getElementById("videoWithButtons").style.display = "none";
+        document.getElementById("shareCamera").style.display = "block";
       });
 
       document.querySelector("#shareCamera").addEventListener("click", function (event) {
@@ -964,6 +966,7 @@
           .then(() => {
             const actionBtns = document.getElementById("actionButtons");
             actionBtns.style.display = "flex";
+            document.getElementById("videoWithButtons").style.display = "flex";
             this.style.display = "none";
             const select = document.getElementById("videoSource");
             if (select.options.length > 0) {
