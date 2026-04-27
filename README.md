@@ -7,11 +7,12 @@ A live working version of this tool is available at https://addpipe.com/webcam-r
 ## Key Features:
 
 1. can scan all your webcams or front/back cameras in one go
-1. works as expected on mobile devices with their multiple cameras
+1. detects the maximum resolution supported by your webcam
 1. detects maximum fps supported by the webcam per each resolution
+1. works as expected on mobile devices with their multiple cameras
 1. can scan using both `ideal` (recommended) and `exact` video constraints
 1. results can be exported or copied as csv, markdown, json or xml
-1. scan results table includes camera name and browser; export filename contains camera name
+1. results table includes camera name and browser; export filename contains camera name
 1. prints out the `getCapabilities()` information for the video track
 1. works on all secure contexts (including `file://`)
 1. relies on `video.videoWidth` and `video.videoHeight` for width and height, not on `track.getSettings()` (it matters on mobile devices where the device will respond with a portrait video when held in portrait mode)
