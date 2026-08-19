@@ -227,7 +227,7 @@ async function scanResolutions(useExact = false, customResolutions = resolutions
     defaultTr.innerHTML = `
           <td>${browserFullVersion || "-"}</td>
           <td>${currentDevices.get(deviceIdToScan).deviceName || "-"}</td>
-          <td>Default<br><button class="applyResolution" data-width="${videoElement.videoWidth}" data-height="${videoElement.videoHeight}" data-fps="${Math.floor(settings.frameRate)}">Apply</button></td>
+          <td>Not specified<br><button class="applyResolution" data-width="${videoElement.videoWidth}" data-height="${videoElement.videoHeight}" data-fps="${Math.floor(settings.frameRate)}">Apply</button></td>
           <td>-</td>
           <td>${settings.width}x${settings.height} (${defaultRatioLabel}) @ ${Math.floor(settings.frameRate)}fps</td>
           <td>-</td>`;
