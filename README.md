@@ -19,6 +19,8 @@ A live working version of this tool is available at https://addpipe.com/webcam-r
 1. marks a resolution as *failed* with `OverconstrainedError` only when that error is thrown (when requesting `exact` resolutions)
 1. new button to release the webcam when you're done scanning
 
+Also check out the [Webcam Tester](https://github.com/addpipe/webcam-tester), a separate JavaScript library that goes beyond resolution checks to test a much wider range of webcam capabilities.
+
 
 ## License
 
